@@ -8,7 +8,7 @@ import { news } from '@/lib/data/news'
 export function BlogPreview() {
   const posts = news.slice(0, 3)
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <SectionHeading eyebrow="Latest News" title="Get Inspired. Stay Up To Date." />
@@ -23,22 +23,22 @@ export function BlogPreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Link href={`/news#${post.slug}`} className="group block overflow-hidden bg-white border border-grey-light hover:shadow-lg transition-shadow duration-300">
+              <Link href={`/news#${post.slug}`} className="group block overflow-hidden bg-white border border-stone/60 hover:border-gold/40 transition-colors duration-300">
                 <div className="relative overflow-hidden aspect-[16/9]">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <div className="p-5">
-                  <span className="text-gold text-xs font-semibold uppercase tracking-widest">{post.date}</span>
-                  <h3 className="font-display text-lg font-bold text-navy mt-2 mb-3 leading-snug group-hover:text-gold transition-colors">
+                  <span className="text-gold text-xs font-semibold uppercase tracking-[0.15em]">{post.date}</span>
+                  <h3 className="font-display italic text-xl text-navy mt-2 mb-3 leading-snug group-hover:text-gold transition-colors">
                     {post.title}
                   </h3>
-                  <span className="text-navy font-semibold text-sm">Continue reading →</span>
+                  <span className="text-navy/60 text-sm group-hover:text-gold transition-colors">Continue reading →</span>
                 </div>
               </Link>
             </motion.div>

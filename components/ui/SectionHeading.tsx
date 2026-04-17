@@ -14,7 +14,7 @@ export function SectionHeading({ eyebrow, title, subtitle, centered = true, ligh
           {eyebrow}
         </span>
       )}
-      <h2 className={`font-display text-4xl md:text-5xl font-bold leading-tight ${light ? 'text-white' : 'text-navy'}`}>
+      <h2 className={`font-display italic text-4xl md:text-5xl leading-tight ${light ? 'text-white' : 'text-navy'}`}>
         {title}
       </h2>
       {subtitle && (

@@ -315,15 +315,25 @@ export function QuoteWizard() {
         <div className="hidden lg:block">
           <div className="sticky top-32 bg-grey-light rounded-sm p-6">
             <h3 className="font-display text-lg font-bold text-navy mb-4">Your selections</h3>
-            <ul className="space-y-2 text-sm text-grey-mid">
-              {q.eventType && <li><span className="text-navy font-semibold">Event:</span> {q.eventType}</li>}
-              {q.guests > 0 && <li><span className="text-navy font-semibold">Guests:</span> {q.guests}</li>}
-              {q.date && <li><span className="text-navy font-semibold">Date:</span> {q.date}</li>}
-              {q.marqueeSize && <li><span className="text-navy font-semibold">Marquee:</span> {q.marqueeSize}</li>}
-              {q.lining !== 'None' && <li><span className="text-navy font-semibold">Lining:</span> {q.lining}</li>}
-              {q.lighting !== 'None' && <li><span className="text-navy font-semibold">Lighting:</span> {q.lighting}</li>}
-              {q.bar !== 'None' && <li><span className="text-navy font-semibold">Bar:</span> {q.bar}</li>}
-            </ul>
+            {step === 0 ? (
+              <p className="text-sm text-grey-mid italic">Complete each step to see your selections here.</p>
+            ) : (
+              <ul className="space-y-2 text-sm text-grey-mid">
+                {step > 0 && q.eventType && <li><span className="text-navy font-semibold">Event:</span> {q.eventType}</li>}
+                {step > 1 && <li><span className="text-navy font-semibold">Guests:</span> {q.guests}</li>}
+                {step > 1 && q.date && <li><span className="text-navy font-semibold">Date:</span> {q.date}</li>}
+                {step > 1 && q.address && <li><span className="text-navy font-semibold">Location:</span> {q.postcode || q.address}</li>}
+                {step > 2 && <li><span className="text-navy font-semibold">Marquee:</span> {q.marqueeSize}</li>}
+                {step > 2 && q.chineseHat && <li><span className="text-navy font-semibold">Chinese Hat:</span> Yes</li>}
+                {step > 2 && q.lining !== 'None' && <li><span className="text-navy font-semibold">Lining:</span> {q.lining}</li>}
+                {step > 3 && q.lighting !== 'None' && <li><span className="text-navy font-semibold">Lighting:</span> {q.lighting}</li>}
+                {step > 3 && q.flooring !== 'None' && <li><span className="text-navy font-semibold">Flooring:</span> {q.flooring}</li>}
+                {step > 3 && q.danceFloor !== 'None' && <li><span className="text-navy font-semibold">Dance Floor:</span> {q.danceFloor}</li>}
+                {step > 3 && q.furniture !== 'None' && <li><span className="text-navy font-semibold">Furniture:</span> {q.furniture}</li>}
+                {step > 3 && q.bar !== 'None' && <li><span className="text-navy font-semibold">Bar:</span> {q.bar}</li>}
+                {step > 3 && q.extras.length > 0 && <li><span className="text-navy font-semibold">Extras:</span> {q.extras.join(', ')}</li>}
+              </ul>
+            )}
           </div>
         </div>
       </div>

@@ -33,8 +33,8 @@ const usps = [
 
 export function USPStrip() {
   return (
-    <section className="bg-navy py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <section className="bg-stone py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {usps.map((usp, i) => (
           <motion.div
             key={usp.heading}
@@ -42,11 +42,16 @@ export function USPStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="text-center text-white"
+            className="relative"
           >
-            <div className="flex justify-center mb-4 text-gold">{usp.icon}</div>
-            <h3 className="font-display text-2xl font-bold mb-3">{usp.heading}</h3>
-            <p className="text-white/65 leading-relaxed text-sm">{usp.text}</p>
+            <span className="font-display italic text-7xl text-navy/8 absolute -top-4 -left-2 leading-none select-none">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div className="relative pt-6">
+              <div className="w-8 h-px bg-gold mb-6" />
+              <h3 className="font-display text-2xl text-navy mb-3">{usp.heading}</h3>
+              <p className="text-navy/55 leading-relaxed text-sm">{usp.text}</p>
+            </div>
           </motion.div>
         ))}
       </div>

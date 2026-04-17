@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function GetAQuotePage() {
   return (
-    <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-grey-light min-h-screen">
+    <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-cream min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Free Quote Builder</span>

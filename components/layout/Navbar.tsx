@@ -46,8 +46,8 @@ export function Navbar() {
   useEffect(() => { setMobileOpen(false) }, [pathname])
 
   return (
-    <header className={`fixed top-8 left-0 right-0 z-40 transition-all duration-300 ${
-      scrolled ? 'bg-navy/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    <header className={`fixed top-8 left-0 right-0 z-40 transition-all duration-500 ${
+      scrolled ? 'bg-navy/96 backdrop-blur-md shadow-xl' : 'bg-gradient-to-b from-navy/70 to-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}

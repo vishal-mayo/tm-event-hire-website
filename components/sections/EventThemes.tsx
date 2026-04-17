@@ -12,7 +12,7 @@ const themes = [
 
 export function EventThemes() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-stone/30">
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <SectionHeading eyebrow="Event Types" title="We Cater For Every Occasion" />

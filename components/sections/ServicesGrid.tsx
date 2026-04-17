@@ -32,7 +32,7 @@ const featuredServices = [
 
 export function ServicesGrid() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-grey-light">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -56,7 +56,7 @@ export function ServicesGrid() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <ServiceCard {...service} />
+              <ServiceCard {...service} index={i} />
             </motion.div>
           ))}
         </div>

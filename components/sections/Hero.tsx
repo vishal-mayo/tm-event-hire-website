@@ -56,7 +56,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5 }}
-                className="font-display text-6xl md:text-8xl font-bold text-white leading-none"
+                className="font-display text-6xl md:text-8xl italic text-white leading-none"
               >
                 {slides[current].word}?
               </motion.h1>
@@ -74,15 +74,17 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Slide dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      {/* Slide progress bars */}
+      <div className="absolute bottom-8 left-8 right-8 flex gap-2 z-10 max-w-xs">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === current ? 'bg-gold scale-125' : 'bg-white/50'}`}
             aria-label={`Go to slide ${i + 1}`}
-          />
+            className="flex-1 h-0.5 bg-white/25 overflow-hidden"
+          >
+            <div className={`h-full bg-gold transition-all duration-300 ${i === current ? 'w-full' : i < current ? 'w-full opacity-60' : 'w-0'}`} />
+          </button>
         ))}
       </div>
     </section>

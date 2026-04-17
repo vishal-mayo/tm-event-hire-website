@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Montserrat, Cormorant_Garamond } from 'next/font/google'
+import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -7,16 +7,17 @@ import { ContactBar } from '@/components/layout/ContactBar'
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp'
 import { PageTransition } from '@/components/layout/PageTransition'
 
-const montserrat = Montserrat({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
-const cormorant = Cormorant_Garamond({
+const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  variable: '--font-cormorant',
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-dm-serif',
   display: 'swap',
 })
 
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <body>
         <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', visibility: 'hidden', width: 0, height: 0 }}>
           <defs>

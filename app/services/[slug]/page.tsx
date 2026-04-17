@@ -27,12 +27,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Our Services</span>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-4">{service.title}</h1>
+          <h1 className="font-display italic text-5xl md:text-6xl text-white mb-4">{service.title}</h1>
           <p className="text-white/70 text-xl italic">{service.tagline}</p>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-navy text-lg leading-relaxed mb-8">{service.description}</p>

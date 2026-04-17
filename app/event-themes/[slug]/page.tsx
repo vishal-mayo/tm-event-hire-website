@@ -29,15 +29,15 @@ export default function EventThemePage({ params }: { params: { slug: string } })
         <div className="absolute inset-0 bg-navy/60" />
         <div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3">Event Theme</span>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white">{theme.title}</h1>
+          <h1 className="font-display italic text-5xl md:text-6xl text-white">{theme.title}</h1>
           <p className="text-white/70 text-xl italic mt-3">{theme.tagline}</p>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-4xl mx-auto">
           <p className="text-navy text-lg leading-relaxed mb-10">{theme.description}</p>
-          <h3 className="font-display text-2xl font-bold text-navy mb-5">What&apos;s included</h3>
+          <h3 className="font-display italic text-2xl text-navy mb-5">What&apos;s included</h3>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
             {theme.highlights.map(h => (
               <li key={h} className="flex items-center gap-3 text-navy">

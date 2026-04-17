@@ -32,7 +32,7 @@ export function ReviewsCarouselClient({ reviews, rating, total }: ReviewsCarouse
   }, [displayReviews.length])
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-grey-light">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-stone/40">
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <div className="text-center mb-8">
@@ -69,13 +69,13 @@ export function ReviewsCarouselClient({ reviews, rating, total }: ReviewsCarouse
             >
               {displayReviews.map((review, i) => (
                 <div key={i} className="min-w-full px-4">
-                  <div className="bg-white rounded-sm shadow-md p-8 max-w-2xl mx-auto">
+                  <div className="bg-cream border border-stone p-8 max-w-2xl mx-auto">
                     <StarRating rating={review.rating} />
-                    <blockquote className="mt-4 text-navy text-base leading-relaxed">
+                    <blockquote className="mt-5 font-display italic text-navy text-xl leading-relaxed">
                       &ldquo;{review.text.length > 200 ? review.text.slice(0, 200) + '…' : review.text}&rdquo;
                     </blockquote>
                     <div className="mt-6 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-bold text-sm">
+                      <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-gold font-display italic text-base">
                         {review.author_name.charAt(0)}
                       </div>
                       <div>
