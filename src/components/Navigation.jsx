@@ -12,6 +12,8 @@ const navLinks = [
 ]
 
 function Navigation() {
+  const MotionNav = motion.nav
+  const MotionDiv = motion.div
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
@@ -26,7 +28,7 @@ function Navigation() {
 
   return (
     <>
-      <motion.nav
+      <MotionNav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -63,11 +65,11 @@ function Navigation() {
             </button>
           </div>
         </div>
-      </motion.nav>
+      </MotionNav>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -87,7 +89,7 @@ function Navigation() {
               </Link>
             ))}
           </div>
-        </motion.div>
+        </MotionDiv>
       )}
     </>
   )
