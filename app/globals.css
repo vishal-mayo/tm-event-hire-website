@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-navy bg-white antialiased;
+  }
+}
+
+@layer utilities {
+  .nav-link {
+    @apply relative text-white font-medium transition-colors duration-200 hover:text-gold;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-gold origin-left scale-x-0 transition-transform duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply scale-x-100;
+  }
+}
+
+@media print {
+  body > *:not(#quote-summary) { display: none !important; }
+  #quote-summary { display: block !important; }
+}
