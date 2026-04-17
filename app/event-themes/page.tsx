@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function EventThemesPage() {
   return (
-    <main className="pt-28">
+    <main className="pt-20">
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading eyebrow="Event Types" title="We Cater For Every Occasion" subtitle="Whatever you're celebrating, TM Event Hire provides the perfect setup." light />

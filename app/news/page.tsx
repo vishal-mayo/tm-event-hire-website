@@ -12,7 +12,7 @@ export default function NewsPage() {
   const [featured, ...rest] = news
 
   return (
-    <main className="pt-28">
+    <main className="pt-20">
       <section className="bg-navy-dark py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em] block mb-3">From Our Blog</span>

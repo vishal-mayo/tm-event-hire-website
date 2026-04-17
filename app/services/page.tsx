@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="pt-28">
+    <main className="pt-20">
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading eyebrow="What We Offer" title="Our Event Hire Services" subtitle="Everything you need to create the perfect event, delivered and set up by our expert team." light />

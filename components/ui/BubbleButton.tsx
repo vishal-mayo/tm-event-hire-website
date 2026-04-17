@@ -20,8 +20,8 @@ export function BubbleButton({ children, href, onClick, variant = 'gold', classN
   const tlRef       = useRef<any>(null)
   const loadedRef   = useRef(false)
 
-  const bgColour   = variant === 'gold' ? '#F5C518' : '#0D1F3C'
-  const textColour = variant === 'gold' ? '#0D1F3C' : '#F5C518'
+  const bgColour   = variant === 'gold' ? '#C9A84C' : '#0D1F3C'
+  const textColour = variant === 'gold' ? '#0D1F3C' : '#C9A84C'
 
   useEffect(() => {
     const scripts = [

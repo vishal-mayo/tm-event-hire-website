@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="pt-28">
+    <main className="pt-20">
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">About Us</span>

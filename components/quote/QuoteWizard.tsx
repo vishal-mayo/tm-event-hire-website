@@ -89,7 +89,7 @@ export function QuoteWizard() {
       setStep(s => s + 1)
       if (step === STEPS.length - 2) {
         const confetti = await confettiModule()
-        confetti({ particleCount: 120, spread: 80, colors: ['#F5C518', '#0D1F3C', '#ffffff'] })
+        confetti({ particleCount: 120, spread: 80, colors: ['#C9A84C', '#0D1F3C', '#FAFAF8'] })
       }
     }
   }

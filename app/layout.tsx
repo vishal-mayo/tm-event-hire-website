@@ -3,7 +3,6 @@ import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { ContactBar } from '@/components/layout/ContactBar'
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp'
 import { PageTransition } from '@/components/layout/PageTransition'
 
@@ -45,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </filter>
           </defs>
         </svg>
-        <ContactBar />
         <Navbar />
         <PageTransition>
           {children}

@@ -1,8 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence, useScroll } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { BubbleButton } from '@/components/ui/BubbleButton'
 
@@ -38,7 +39,8 @@ export function Navbar() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 80)
+    const handler = () => setScrolled(window.scrollY > 60)
+    handler()
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
@@ -46,13 +48,27 @@ export function Navbar() {
   useEffect(() => { setMobileOpen(false) }, [pathname])
 
   return (
-    <header className={`fixed top-8 left-0 right-0 z-40 transition-all duration-500 ${
-      scrolled ? 'bg-navy/96 backdrop-blur-md shadow-xl' : 'bg-gradient-to-b from-navy/70 to-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ${
+      scrolled
+        ? 'bg-navy/92 backdrop-blur-md shadow-lg'
+        : 'bg-gradient-to-b from-navy/75 via-navy/40 to-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="font-display text-2xl font-bold text-white">TM<span className="text-gold">Event</span>Hire</span>
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <div className="w-10 h-10 relative rounded overflow-hidden">
+            <Image
+              src="/images/logo.jpg"
+              alt="TM Event Hire logo"
+              fill
+              className="object-contain"
+              sizes="40px"
+              priority
+            />
+          </div>
+          <span className="font-display text-xl text-white tracking-wide">
+            TM <span className="text-gold">Event</span> Hire
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -67,7 +83,7 @@ export function Navbar() {
                 className={`nav-link flex items-center gap-1 text-sm ${pathname === link.href ? 'active' : ''}`}
               >
                 {link.label}
-                {link.children && <ChevronDown size={14} className="mt-0.5" />}
+                {link.children && <ChevronDown size={13} className="mt-0.5 opacity-70" />}
               </Link>
 
               <AnimatePresence>
@@ -77,11 +93,11 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-2 w-52 bg-white shadow-xl rounded-sm overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-52 bg-navy/96 backdrop-blur-md shadow-xl overflow-hidden border border-white/10"
                   >
                     {link.children.map(child => (
                       <Link key={child.href} href={child.href}
-                        className="block px-4 py-3 text-sm text-navy hover:bg-grey-light hover:text-gold transition-colors"
+                        className="block px-4 py-3 text-sm text-white/70 hover:bg-white/10 hover:text-white transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -123,7 +139,7 @@ export function Navbar() {
                 transition={{ delay: i * 0.07 }}
               >
                 <Link href={link.href}
-                  className="block py-4 text-2xl font-display font-bold text-white border-b border-white/10 hover:text-gold transition-colors"
+                  className="block py-4 text-2xl font-display italic text-white border-b border-white/10 hover:text-gold transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -134,7 +150,7 @@ export function Navbar() {
                     transition={{ delay: i * 0.07 + j * 0.04 + 0.1 }}
                   >
                     <Link href={child.href}
-                      className="block py-2 pl-4 text-base text-white/70 hover:text-gold transition-colors"
+                      className="block py-2 pl-4 text-base text-white/60 hover:text-gold transition-colors"
                     >
                       {child.label}
                     </Link>
