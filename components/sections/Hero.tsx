@@ -29,48 +29,67 @@ export function Hero() {
             alt={slide.alt}
             fill
             priority={i === 0}
-            className="object-cover"
-            style={{ transform: 'scale(1.05)' }}
+            className="object-cover scale-105"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-navy/60" />
+          <div className="absolute inset-0 bg-navy/65" />
         </div>
       ))}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-2xl">
-          <p className="text-silver font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+        <div className="max-w-3xl">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-silver font-semibold text-xs uppercase tracking-[0.3em] mb-5"
+          >
             Essex · Hertfordshire · London
-          </p>
+          </motion.p>
 
-          <div className="mb-2 text-white font-display text-xl md:text-2xl font-light">
-            Planning a...
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="mb-1 text-white/50 font-sans text-base md:text-lg uppercase tracking-[0.15em]"
+          >
+            Planning a
+          </motion.div>
 
-          <div className="h-24 md:h-32 flex items-center mb-6">
+          <div className="overflow-hidden h-[5rem] md:h-[7.5rem] flex items-center mb-6">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={slides[current].word}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-6xl md:text-8xl italic text-white leading-none"
+                initial={{ y: '100%', opacity: 0 }}
+                animate={{ y: '0%', opacity: 1 }}
+                exit={{ y: '-100%', opacity: 0 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display font-extrabold tracking-tighter text-7xl md:text-9xl text-white leading-none"
               >
                 {slides[current].word}?
               </motion.h1>
             </AnimatePresence>
           </div>
 
-          <p className="text-white/80 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-white/70 text-lg md:text-xl mb-10 max-w-lg leading-relaxed"
+          >
             We provide everything you need so that your guests can have the time of their lives.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="flex flex-wrap gap-4"
+          >
             <BubbleButton href="/get-a-quote" variant="gold">Get a Quote</BubbleButton>
             <BubbleButton href="/services" variant="navy">View Services</BubbleButton>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -81,9 +100,9 @@ export function Hero() {
             key={i}
             onClick={() => setCurrent(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className="flex-1 h-0.5 bg-white/25 overflow-hidden"
+            className="flex-1 h-0.5 bg-white/20 overflow-hidden"
           >
-            <div className={`h-full bg-silver transition-all duration-300 ${i === current ? 'w-full' : i < current ? 'w-full opacity-60' : 'w-0'}`} />
+            <div className={`h-full bg-silver transition-all duration-300 ${i === current ? 'w-full' : i < current ? 'w-full opacity-50' : 'w-0'}`} />
           </button>
         ))}
       </div>

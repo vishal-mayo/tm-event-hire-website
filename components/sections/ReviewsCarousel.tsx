@@ -75,7 +75,7 @@ export function ReviewsCarouselClient({ reviews, rating, total }: ReviewsCarouse
                       &ldquo;{review.text.length > 200 ? review.text.slice(0, 200) + '…' : review.text}&rdquo;
                     </blockquote>
                     <div className="mt-6 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-silver font-display italic text-base">
+                      <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-silver font-display font-bold text-base">
                         {review.author_name.charAt(0)}
                       </div>
                       <div>

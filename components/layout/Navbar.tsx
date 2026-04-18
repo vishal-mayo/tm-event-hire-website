@@ -137,7 +137,7 @@ export function Navbar() {
                 transition={{ delay: i * 0.07 }}
               >
                 <Link href={link.href}
-                  className="block py-4 text-2xl font-display italic text-white border-b border-white/10 hover:text-silver transition-colors"
+                  className="block py-4 text-2xl font-display font-bold tracking-tight text-white border-b border-white/10 hover:text-silver transition-colors"
                 >
                   {link.label}
                 </Link>

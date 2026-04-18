@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">About Us</span>
-          <h1 className="font-display italic text-5xl md:text-6xl text-white">Who We Are</h1>
+          <h1 className="font-display font-bold tracking-tight text-5xl md:text-6xl text-white">Who We Are</h1>
         </div>
       </section>
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Our Story</span>
-            <h2 className="font-display italic text-4xl text-navy mb-6">10+ Years of Creating Unforgettable Events</h2>
+            <h2 className="font-display font-bold tracking-tight text-4xl text-navy mb-6">10+ Years of Creating Unforgettable Events</h2>
             <p className="text-navy/70 text-lg leading-relaxed mb-5">
               With over 10 years of experience in the events, catering and wedding industries, TM Event Hire has established itself as one of Essex&apos;s premier event equipment hire companies. We&apos;re proud members of the Event Hire Association.
             </p>

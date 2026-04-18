@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/sections/Hero'
+import { TickerStrip } from '@/components/ui/TickerStrip'
 import { ServicesGrid } from '@/components/sections/ServicesGrid'
 import { USPStrip } from '@/components/sections/USPStrip'
 import { EventThemes } from '@/components/sections/EventThemes'
@@ -19,6 +20,7 @@ export default async function HomePage() {
   return (
     <main>
       <Hero />
+      <TickerStrip />
       <ServicesGrid />
       <USPStrip />
       <EventThemes />

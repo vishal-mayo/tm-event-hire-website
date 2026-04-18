@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Sans, DM_Serif_Display } from 'next/font/google'
+import { DM_Sans, Syne } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -12,11 +12,10 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
-const dmSerif = DM_Serif_Display({
+const syne = Syne({
   subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  variable: '--font-dm-serif',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-syne',
   display: 'swap',
 })
 
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${syne.variable}`}>
       <body>
         <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', visibility: 'hidden', width: 0, height: 0 }}>
           <defs>

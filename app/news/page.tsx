@@ -16,7 +16,7 @@ export default function NewsPage() {
       <section className="bg-navy-dark py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <span className="text-silver text-xs font-semibold uppercase tracking-[0.2em] block mb-3">From Our Blog</span>
-          <h1 className="font-display italic text-5xl md:text-6xl text-white">Get Inspired.</h1>
+          <h1 className="font-display font-bold tracking-tight text-5xl md:text-6xl text-white">Get Inspired.</h1>
           <p className="text-white/50 text-lg mt-2">Ideas, tips and news from the TM Event Hire team.</p>
         </div>
       </section>
@@ -32,7 +32,7 @@ export default function NewsPage() {
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center bg-white">
                 <span className="text-silver text-xs font-semibold uppercase tracking-[0.2em] mb-4">{featured.date}</span>
-                <h2 className="font-display italic text-3xl md:text-4xl text-navy mb-4 leading-snug">{featured.title}</h2>
+                <h2 className="font-display font-bold tracking-tight text-3xl md:text-4xl text-navy mb-4 leading-snug">{featured.title}</h2>
                 <p className="text-navy/55 leading-relaxed mb-6">{featured.excerpt}</p>
                 <div className="text-navy/60 text-sm leading-relaxed whitespace-pre-line border-t border-stone pt-6">{featured.content}</div>
               </div>

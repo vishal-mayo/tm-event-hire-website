@@ -25,6 +25,15 @@
   }
 }
 
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 40s linear infinite;
+  will-change: transform;
+}
+
 @media print {
   body > *:not(#quote-summary) { display: none !important; }
   #quote-summary { display: block !important; }

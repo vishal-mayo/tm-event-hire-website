@@ -25,7 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         sans:    ['var(--font-dm-sans)', 'sans-serif'],
-        display: ['var(--font-dm-serif)', 'serif'],
+        display: ['var(--font-syne)', 'sans-serif'],
       },
     },
   },

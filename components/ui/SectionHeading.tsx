@@ -1,3 +1,6 @@
+'use client'
+import { motion } from 'framer-motion'
+
 interface SectionHeadingProps {
   eyebrow?: string
   title: string
@@ -10,17 +13,37 @@ export function SectionHeading({ eyebrow, title, subtitle, centered = true, ligh
   return (
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
       {eyebrow && (
-        <span className="inline-block text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-3">
+        <motion.span
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className={`inline-block font-semibold text-xs uppercase tracking-[0.25em] mb-4 ${light ? 'text-silver' : 'text-silver'}`}
+        >
           {eyebrow}
-        </span>
+        </motion.span>
       )}
-      <h2 className={`font-display italic text-4xl md:text-5xl leading-tight ${light ? 'text-white' : 'text-navy'}`}>
-        {title}
-      </h2>
+      <div className="overflow-hidden">
+        <motion.h2
+          initial={{ y: '105%' }}
+          whileInView={{ y: '0%' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: eyebrow ? 0.08 : 0 }}
+          className={`font-display font-bold tracking-tight text-4xl md:text-5xl leading-[1.1] ${light ? 'text-white' : 'text-navy'}`}
+        >
+          {title}
+        </motion.h2>
+      </div>
       {subtitle && (
-        <p className={`mt-4 text-lg max-w-2xl ${centered ? 'mx-auto' : ''} ${light ? 'text-white/70' : 'text-silver-dark'}`}>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
+          className={`mt-4 text-lg max-w-2xl ${centered ? 'mx-auto' : ''} ${light ? 'text-white/70' : 'text-silver-dark'}`}
+        >
           {subtitle}
-        </p>
+        </motion.p>
       )}
     </div>
   )

@@ -44,7 +44,7 @@ export function USPStrip() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="relative"
           >
-            <span className="font-display italic text-7xl text-navy/8 absolute -top-4 -left-2 leading-none select-none">
+            <span className="font-display font-extrabold text-8xl text-navy/[0.06] absolute -top-4 -left-2 leading-none select-none tracking-tighter">
               {String(i + 1).padStart(2, '0')}
             </span>
             <div className="relative pt-6">

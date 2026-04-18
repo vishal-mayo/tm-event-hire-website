@@ -15,7 +15,7 @@ export function CallbackCTA() {
           <span className="inline-block text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-4">
             Get In Touch
           </span>
-          <h2 className="font-display italic text-4xl md:text-5xl text-white mb-4">
+          <h2 className="font-display font-bold tracking-tight text-4xl md:text-5xl text-white mb-4">
             Have a question? Speak to our team today!
           </h2>
           <p className="text-white/65 text-lg mb-10">
