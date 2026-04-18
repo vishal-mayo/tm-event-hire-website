@@ -97,25 +97,25 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
       className="relative"
       onMouseEnter={() => tlRef.current?.restart()}
     >
-      {/* Goo bubble circles — top-left corner */}
+      {/* Goo bubble circles — anchored at top-left corner, circles centered on it */}
       <span
-        className="absolute pointer-events-none z-10"
-        style={{ top: 0, left: 0, width: '60%', height: '60%', filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
+        className="absolute pointer-events-none z-20"
+        style={{ top: 0, left: 0, filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
       >
         {[0, 1, 2].map(i => (
-          <span key={`tl-${i}`} className="card-circle top-left absolute w-[18px] h-[18px] rounded-full bg-white/80"
-            style={{ top: '70%', left: '20%' }} />
+          <span key={`tl-${i}`} className="card-circle top-left absolute w-[18px] h-[18px] rounded-full"
+            style={{ background: '#071e50', top: -9, left: -9 }} />
         ))}
       </span>
 
-      {/* Goo bubble circles — bottom-right corner */}
+      {/* Goo bubble circles — anchored at bottom-right corner, circles centered on it */}
       <span
-        className="absolute pointer-events-none z-10"
-        style={{ bottom: 0, right: 0, width: '60%', height: '60%', filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
+        className="absolute pointer-events-none z-20"
+        style={{ bottom: 0, right: 0, filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
       >
         {[0, 1, 2].map(i => (
-          <span key={`br-${i}`} className="card-circle bottom-right absolute w-[18px] h-[18px] rounded-full bg-white/80"
-            style={{ bottom: '70%', right: '20%' }} />
+          <span key={`br-${i}`} className="card-circle bottom-right absolute w-[18px] h-[18px] rounded-full"
+            style={{ background: '#071e50', top: -9, left: -9 }} />
         ))}
       </span>
 
