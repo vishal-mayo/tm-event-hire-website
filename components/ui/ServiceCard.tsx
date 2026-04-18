@@ -56,7 +56,10 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
     const br = el.querySelectorAll<HTMLElement>('.card-circle.bottom-right')
 
     const tlAnim = new TimelineLite()
-    tlAnim.to(tl, 1.2, { x: -25, y: -25, ease: SlowMo.ease.config(0.1, 0.7, false) })
+    const tl2Anim = new TimelineLite()
+    const btTl = new TimelineLite({ paused: true })
+
+    tlAnim.to(tl, 1.2, { x: -30, y: -30, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) })
     tlAnim.to(tl[0], 0.1, { scale: 0.2, x: '+=6', y: '-=2' })
     tlAnim.to(tl[1], 0.1, { scaleX: 1, scaleY: 0.8, x: '-=10', y: '-=7' }, '-=0.1')
     tlAnim.to(tl[2], 0.1, { scale: 0.2, x: '-=15', y: '+=6' }, '-=0.1')
@@ -68,7 +71,6 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
     tlBt1.set(tl, { x: 0, y: 0, rotation: -45 })
     tlBt1.add(tlAnim)
 
-    const tl2Anim = new TimelineLite()
     tl2Anim.set(br, { x: 0, y: 0 })
     tl2Anim.to(br, 1.1, { x: 30, y: 30, ease: SlowMo.ease.config(0.1, 0.7, false) })
     tl2Anim.to(br[0], 0.1, { scale: 0.2, x: '-=6', y: '+=3' })
@@ -82,11 +84,8 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
     tlBt2.set(br, { x: 0, y: 0, rotation: 45 })
     tlBt2.add(tl2Anim)
 
-    const btTl = new TimelineLite({ paused: true })
     btTl.add(tlBt1)
-    btTl.to(tlBt1, 0.8, { scaleY: 1.1 }, 0.1)
     btTl.add(tlBt2, 0.2)
-    btTl.to(tlBt2, 1.8, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4) }, 1.2)
     btTl.timeScale(2.6)
 
     tlRef.current = btTl
@@ -101,7 +100,7 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
         tlRef.current?.restart()
       }}
     >
-      {/* Circles sit BEHIND the card (z-0) so they burst from behind the rounded corners */}
+      {/* z-0: circles sit behind the card, bursting from behind the rounded corners */}
       <span
         className="absolute pointer-events-none z-0"
         style={{ top: 0, left: 0, filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
@@ -122,7 +121,7 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
         ))}
       </span>
 
-      {/* Card sits on top of circles via z-10 */}
+      {/* z-10: card sits on top of circles */}
       <Link href={href} className="group relative z-10 block overflow-hidden rounded-2xl aspect-[3/4] transition-transform duration-300 ease-out hover:scale-[1.03] hover:shadow-2xl">
         <Image
           src={image}
