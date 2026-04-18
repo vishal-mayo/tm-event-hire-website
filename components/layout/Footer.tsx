@@ -61,7 +61,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand col */}
           <div>
-            <div className="font-display text-2xl font-bold mb-4 tracking-wide">
+            <div className="font-sans font-bold text-xl mb-4 tracking-wide">
               TM<span className="text-silver">Event</span>Hire
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-5">

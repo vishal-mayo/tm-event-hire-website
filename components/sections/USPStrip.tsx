@@ -49,7 +49,7 @@ export function USPStrip() {
             </span>
             <div className="relative pt-6">
               <div className="w-8 h-px bg-silver mb-6" />
-              <h3 className="font-display text-2xl text-navy mb-3">{usp.heading}</h3>
+              <h3 className="font-sans font-bold text-xl text-navy mb-3">{usp.heading}</h3>
               <p className="text-navy/55 leading-relaxed text-sm">{usp.text}</p>
             </div>
           </motion.div>

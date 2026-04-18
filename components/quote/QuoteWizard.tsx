@@ -104,7 +104,7 @@ export function QuoteWizard() {
         <div className="lg:col-span-2 bg-white rounded-sm shadow-lg p-8">
           {step === 0 && (
             <div>
-              <h2 className="font-display text-2xl font-bold text-navy mb-6">What type of event are you planning?</h2>
+              <h2 className="font-sans font-bold text-xl text-navy mb-6">What type of event are you planning?</h2>
               <div className="grid grid-cols-3 gap-3">
                 {EVENT_TYPES.map(t => (
                   <button key={t} onClick={() => set('eventType', t)}
@@ -119,7 +119,7 @@ export function QuoteWizard() {
 
           {step === 1 && (
             <div className="space-y-6">
-              <h2 className="font-display text-2xl font-bold text-navy">Tell us about your event</h2>
+              <h2 className="font-sans font-bold text-xl text-navy">Tell us about your event</h2>
               <div>
                 <label className="block text-sm font-semibold text-navy mb-2">Number of guests: <span className="text-silver">{q.guests}</span></label>
                 <input type="range" min={10} max={500} step={10} value={q.guests} onChange={e => set('guests', +e.target.value)}
@@ -146,7 +146,7 @@ export function QuoteWizard() {
 
           {step === 2 && (
             <div className="space-y-6">
-              <h2 className="font-display text-2xl font-bold text-navy">Marquee & structure options</h2>
+              <h2 className="font-sans font-bold text-xl text-navy">Marquee & structure options</h2>
               <div>
                 <label className="block text-sm font-semibold text-navy mb-3">Marquee size</label>
                 <div className="grid grid-cols-3 gap-3">
@@ -181,7 +181,7 @@ export function QuoteWizard() {
 
           {step === 3 && (
             <div className="space-y-6">
-              <h2 className="font-display text-2xl font-bold text-navy">Furnishings & extras</h2>
+              <h2 className="font-sans font-bold text-xl text-navy">Furnishings & extras</h2>
               {[
                 { label: 'Lighting', options: LIGHTING, key: 'lighting' as const },
                 { label: 'Flooring', options: FLOORING, key: 'flooring' as const },
@@ -237,7 +237,7 @@ export function QuoteWizard() {
 
           {step === 4 && (
             <div className="space-y-6">
-              <h2 className="font-display text-2xl font-bold text-navy">Your contact details</h2>
+              <h2 className="font-sans font-bold text-xl text-navy">Your contact details</h2>
               {[
                 { label: 'Full Name', key: 'name' as const, placeholder: 'Jane Smith', type: 'text' },
                 { label: 'Email Address', key: 'email' as const, placeholder: 'jane@example.com', type: 'email' },
@@ -255,7 +255,7 @@ export function QuoteWizard() {
 
           {step === 5 && (
             <div id="quote-summary">
-              <h2 className="font-display text-2xl font-bold text-navy mb-6">Your Quote Summary</h2>
+              <h2 className="font-sans font-bold text-xl text-navy mb-6">Your Quote Summary</h2>
               <div className="space-y-3 mb-6">
                 {[
                   ['Event Type', q.eventType],
@@ -314,7 +314,7 @@ export function QuoteWizard() {
         {/* Sticky sidebar summary */}
         <div className="hidden lg:block">
           <div className="sticky top-32 bg-grey-light rounded-sm p-6">
-            <h3 className="font-display text-lg font-bold text-navy mb-4">Your selections</h3>
+            <h3 className="font-sans font-bold text-base font-bold text-navy mb-4">Your selections</h3>
             {step === 0 ? (
               <p className="text-sm text-silver-dark italic">Complete each step to see your selections here.</p>
             ) : (

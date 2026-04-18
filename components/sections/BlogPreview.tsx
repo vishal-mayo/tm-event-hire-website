@@ -35,7 +35,7 @@ export function BlogPreview() {
                 </div>
                 <div className="p-5">
                   <span className="text-silver text-xs font-semibold uppercase tracking-[0.15em]">{post.date}</span>
-                  <h3 className="font-display italic text-xl text-navy mt-2 mb-3 leading-snug group-hover:text-silver transition-colors">
+                  <h3 className="font-sans font-bold text-lg text-navy mt-2 mb-3 leading-snug group-hover:text-silver transition-colors">
                     {post.title}
                   </h3>
                   <span className="text-navy/60 text-sm group-hover:text-silver transition-colors">Continue reading →</span>

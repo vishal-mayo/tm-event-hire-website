@@ -29,7 +29,7 @@ export default function ServicesPage() {
               </div>
               <div className="p-6 relative">
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-silver origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                <h2 className="font-display italic text-xl text-navy mb-2">{service.title}</h2>
+                <h2 className="font-sans font-bold text-lg text-navy mb-2">{service.title}</h2>
                 <p className="text-silver text-sm font-semibold italic mb-3">{service.tagline}</p>
                 <p className="text-silver-dark text-sm line-clamp-3">{service.description}</p>
                 <span className="inline-block mt-4 text-silver font-semibold text-sm">Learn More →</span>

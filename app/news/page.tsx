@@ -48,7 +48,7 @@ export default function NewsPage() {
                 </div>
                 <div className="p-6">
                   <span className="text-silver text-xs font-semibold uppercase tracking-[0.2em]">{post.date}</span>
-                  <h2 className="font-display italic text-xl text-navy mt-2 mb-3 leading-snug">{post.title}</h2>
+                  <h2 className="font-sans font-bold text-lg text-navy mt-2 mb-3 leading-snug">{post.title}</h2>
                   <p className="text-navy/55 text-sm leading-relaxed mb-4">{post.excerpt}</p>
                   <div className="text-navy/50 text-sm leading-relaxed whitespace-pre-line border-t border-stone pt-4">{post.content}</div>
                 </div>

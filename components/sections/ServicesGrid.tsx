@@ -47,7 +47,7 @@ export function ServicesGrid() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {featuredServices.map((service, i) => (
             <motion.div
               key={service.href}

@@ -19,7 +19,7 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="font-display text-2xl font-bold text-navy mb-6">Get in touch</h2>
+            <h2 className="font-sans font-bold text-xl text-navy mb-6">Get in touch</h2>
             <div className="space-y-5">
               {[
                 { label: 'Phone', value: '+44 7595 979 451', href: 'tel:+447595979451', icon: '📞' },
@@ -48,7 +48,7 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-stone/30 border border-stone/60 p-8">
-            <h2 className="font-display text-2xl font-bold text-navy mb-2">Ready to get started?</h2>
+            <h2 className="font-sans font-bold text-xl text-navy mb-2">Ready to get started?</h2>
             <p className="text-navy/60 mb-6 text-sm">Use our quote builder to tell us about your event and we&apos;ll be in touch with a personalised package.</p>
             <BubbleButton href="/get-a-quote" variant="gold">Build Your Quote</BubbleButton>
           </div>

@@ -61,7 +61,7 @@ export default function EventThemePage({ params }: { params: { slug: string } })
             <div className="space-y-8">
               {/* What's included */}
               <div className="bg-stone/30 border border-stone p-6">
-                <h3 className="font-display italic text-2xl text-navy mb-5">What&apos;s included</h3>
+                <h3 className="font-sans font-bold text-xl text-navy mb-5">What&apos;s included</h3>
                 <ul className="space-y-3">
                   {theme.highlights.map(h => (
                     <li key={h} className="flex items-start gap-3 text-navy/70 text-sm">
@@ -79,7 +79,7 @@ export default function EventThemePage({ params }: { params: { slug: string } })
               {/* Packages */}
               {theme.packages && (
                 <div className="bg-navy p-6">
-                  <h3 className="font-display italic text-2xl text-white mb-5">Popular packages</h3>
+                  <h3 className="font-sans font-bold text-xl text-white mb-5">Popular packages</h3>
                   <ul className="space-y-2.5">
                     {theme.packages.map(p => (
                       <li key={p} className="text-white/60 text-sm flex items-center gap-2">
