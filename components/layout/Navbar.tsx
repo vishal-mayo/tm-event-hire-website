@@ -48,10 +48,8 @@ export function Navbar() {
   useEffect(() => { setMobileOpen(false) }, [pathname])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ${
-      scrolled
-        ? 'bg-navy/92 backdrop-blur-md shadow-lg'
-        : 'bg-gradient-to-b from-navy/75 via-navy/40 to-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-navy/95 backdrop-blur-md ${
+      scrolled ? 'shadow-lg' : 'shadow-none'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
@@ -93,7 +91,7 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-2 w-52 bg-navy/96 backdrop-blur-md shadow-xl overflow-hidden border border-white/10"
+                    className="absolute top-full left-0 mt-2 w-52 bg-navy shadow-xl overflow-hidden border border-white/10"
                   >
                     {link.children.map(child => (
                       <Link key={child.href} href={child.href}
