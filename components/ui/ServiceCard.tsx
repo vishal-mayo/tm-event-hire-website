@@ -55,14 +55,10 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
     const tl = el.querySelectorAll<HTMLElement>('.card-circle.top-left')
     const br = el.querySelectorAll<HTMLElement>('.card-circle.bottom-right')
 
-    // Keep circles hidden until hover fires
-    TweenLite.set([...Array.from(tl), ...Array.from(br)], { opacity: 0, scale: 0 })
-
     const tlAnim = new TimelineLite()
     const tl2Anim = new TimelineLite()
     const btTl = new TimelineLite({ paused: true })
 
-    tlAnim.to(tl, 0, { opacity: 1, scale: 1 })
     tlAnim.to(tl, 1.2, { x: -30, y: -30, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) })
     tlAnim.to(tl[0], 0.1, { scale: 0.2, x: '+=6', y: '-=2' })
     tlAnim.to(tl[1], 0.1, { scaleX: 1, scaleY: 0.8, x: '-=10', y: '-=7' }, '-=0.1')
@@ -76,7 +72,6 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
     tlBt1.add(tlAnim)
 
     tl2Anim.set(br, { x: 0, y: 0 })
-    tl2Anim.to(br, 0, { opacity: 1, scale: 1 })
     tl2Anim.to(br, 1.1, { x: 30, y: 30, ease: SlowMo.ease.config(0.1, 0.7, false) })
     tl2Anim.to(br[0], 0.1, { scale: 0.2, x: '-=6', y: '+=3' })
     tl2Anim.to(br[1], 0.1, { scale: 0.8, x: '+=7', y: '+=3' }, '-=0.1')
@@ -100,7 +95,10 @@ export function ServiceCard({ title, image, href }: ServiceCardProps) {
     <div
       ref={wrapperRef}
       className="relative"
-      onMouseEnter={() => tlRef.current?.restart()}
+      onMouseEnter={() => {
+        wrapperRef.current?.querySelectorAll<HTMLElement>('.card-circle').forEach(c => { c.style.opacity = '1' })
+        tlRef.current?.restart()
+      }}
     >
       {/* Goo bubble circles — anchored at top-left corner, hidden until hover */}
       <span
