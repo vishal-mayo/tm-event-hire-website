@@ -18,7 +18,7 @@ export default function EventThemesPage() {
           <SectionHeading eyebrow="Event Types" title="We Cater For Every Occasion" subtitle="Whatever you're celebrating, TM Event Hire provides the perfect setup." light />
         </div>
       </section>
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-silver-100">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {eventThemes.map(theme => (
             <Link key={theme.slug} href={`/event-themes/${theme.slug}`}
@@ -28,7 +28,7 @@ export default function EventThemesPage() {
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h2 className="font-display italic text-3xl text-white mb-2">{theme.title}</h2>
                 <p className="text-white/70 mb-3 text-sm">{theme.tagline}</p>
-                <span className="text-gold font-semibold text-sm">Learn More →</span>
+                <span className="text-silver font-semibold text-sm">Learn More →</span>
               </div>
             </Link>
           ))}

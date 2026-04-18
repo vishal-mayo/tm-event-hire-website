@@ -60,14 +60,14 @@ function ProgressBar({ step }: { step: number }) {
         <div key={i} className="flex items-center shrink-0">
           <div className={`flex flex-col items-center ${i < STEPS.length - 1 ? 'mr-2' : ''}`}>
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-              i < step ? 'bg-gold text-navy' : i === step ? 'bg-navy text-white ring-2 ring-gold' : 'bg-grey-light text-grey-mid'
+              i < step ? 'bg-gold text-navy' : i === step ? 'bg-navy text-white ring-2 ring-gold' : 'bg-silver-100 text-silver-dark'
             }`}>
               {i < step ? '✓' : i + 1}
             </div>
-            <span className="text-[10px] mt-1 text-grey-mid hidden sm:block whitespace-nowrap">{label}</span>
+            <span className="text-[10px] mt-1 text-silver-dark hidden sm:block whitespace-nowrap">{label}</span>
           </div>
           {i < STEPS.length - 1 && (
-            <div className={`h-0.5 w-8 mx-1 transition-colors ${i < step ? 'bg-gold' : 'bg-grey-light'}`} />
+            <div className={`h-0.5 w-8 mx-1 transition-colors ${i < step ? 'bg-gold' : 'bg-silver-100'}`} />
           )}
         </div>
       ))}
@@ -109,7 +109,7 @@ export function QuoteWizard() {
                 {EVENT_TYPES.map(t => (
                   <button key={t} onClick={() => set('eventType', t)}
                     className={`p-3 border-2 rounded-sm text-sm font-semibold transition-all ${
-                      q.eventType === t ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-grey-mid hover:border-navy'
+                      q.eventType === t ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-silver-dark hover:border-navy'
                     }`}
                   >{t}</button>
                 ))}
@@ -124,7 +124,7 @@ export function QuoteWizard() {
                 <label className="block text-sm font-semibold text-navy mb-2">Number of guests: <span className="text-gold">{q.guests}</span></label>
                 <input type="range" min={10} max={500} step={10} value={q.guests} onChange={e => set('guests', +e.target.value)}
                   className="w-full accent-gold" />
-                <div className="flex justify-between text-xs text-grey-mid mt-1"><span>10</span><span>500</span></div>
+                <div className="flex justify-between text-xs text-silver-dark mt-1"><span>10</span><span>500</span></div>
               </div>
               <div>
                 <label className="block text-sm font-semibold text-navy mb-2">Event date</label>
@@ -153,7 +153,7 @@ export function QuoteWizard() {
                   {MARQUEE_SIZES.map(s => (
                     <button key={s} onClick={() => set('marqueeSize', s)}
                       className={`p-3 border-2 rounded-sm text-sm font-semibold transition-all ${
-                        q.marqueeSize === s ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-grey-mid hover:border-navy'
+                        q.marqueeSize === s ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-silver-dark hover:border-navy'
                       }`}
                     >{s}</button>
                   ))}
@@ -170,7 +170,7 @@ export function QuoteWizard() {
                   {LININGS.map(l => (
                     <button key={l} onClick={() => set('lining', l)}
                       className={`p-3 border-2 rounded-sm text-sm font-semibold transition-all ${
-                        q.lining === l ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-grey-mid hover:border-navy'
+                        q.lining === l ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-silver-dark hover:border-navy'
                       }`}
                     >{l}</button>
                   ))}
@@ -194,7 +194,7 @@ export function QuoteWizard() {
                     {options.map(o => (
                       <button key={o} onClick={() => set(key, o)}
                         className={`p-2.5 border-2 rounded-sm text-xs font-semibold transition-all ${
-                          q[key] === o ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-grey-mid hover:border-navy'
+                          q[key] === o ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-silver-dark hover:border-navy'
                         }`}
                       >{o}</button>
                     ))}
@@ -207,7 +207,7 @@ export function QuoteWizard() {
                   {FURNITURE.map(f => (
                     <button key={f} onClick={() => set('furniture', f)}
                       className={`p-2.5 border-2 rounded-sm text-xs font-semibold transition-all ${
-                        q.furniture === f ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-grey-mid hover:border-navy'
+                        q.furniture === f ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-silver-dark hover:border-navy'
                       }`}
                     >{f}</button>
                   ))}
@@ -226,7 +226,7 @@ export function QuoteWizard() {
                   {EXTRAS.map(e => (
                     <button key={e} onClick={() => toggleExtra(e)}
                       className={`p-2.5 border-2 rounded-sm text-xs font-semibold transition-all text-left ${
-                        q.extras.includes(e) ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-grey-mid hover:border-navy'
+                        q.extras.includes(e) ? 'border-gold bg-gold/10 text-navy' : 'border-grey-light text-silver-dark hover:border-navy'
                       }`}
                     >{e}</button>
                   ))}
@@ -277,11 +277,11 @@ export function QuoteWizard() {
                 ].map(([label, val]) => val && (
                   <div key={label} className="flex justify-between py-2 border-b border-grey-light text-sm">
                     <span className="font-semibold text-navy">{label}</span>
-                    <span className="text-grey-mid text-right max-w-xs">{val}</span>
+                    <span className="text-silver-dark text-right max-w-xs">{val}</span>
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-grey-mid italic mb-8">
+              <p className="text-xs text-silver-dark italic mb-8">
                 This is an estimated quote only. All prices are subject to a site visit and final confirmation.
               </p>
               <div className="flex flex-wrap gap-4 mb-4">
@@ -313,12 +313,12 @@ export function QuoteWizard() {
 
         {/* Sticky sidebar summary */}
         <div className="hidden lg:block">
-          <div className="sticky top-32 bg-grey-light rounded-sm p-6">
+          <div className="sticky top-32 bg-silver-100 rounded-sm p-6">
             <h3 className="font-display text-lg font-bold text-navy mb-4">Your selections</h3>
             {step === 0 ? (
-              <p className="text-sm text-grey-mid italic">Complete each step to see your selections here.</p>
+              <p className="text-sm text-silver-dark italic">Complete each step to see your selections here.</p>
             ) : (
-              <ul className="space-y-2 text-sm text-grey-mid">
+              <ul className="space-y-2 text-sm text-silver-dark">
                 {step > 0 && q.eventType && <li><span className="text-navy font-semibold">Event:</span> {q.eventType}</li>}
                 {step > 1 && <li><span className="text-navy font-semibold">Guests:</span> {q.guests}</li>}
                 {step > 1 && q.date && <li><span className="text-navy font-semibold">Date:</span> {q.date}</li>}

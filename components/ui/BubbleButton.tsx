@@ -11,17 +11,17 @@ interface BubbleButtonProps {
   children: React.ReactNode
   href?: string
   onClick?: () => void
-  variant?: 'gold' | 'navy'
+  variant?: 'silver' | 'navy' | 'gold'
   className?: string
 }
 
-export function BubbleButton({ children, href, onClick, variant = 'gold', className }: BubbleButtonProps) {
+export function BubbleButton({ children, href, onClick, variant = 'silver', className }: BubbleButtonProps) {
   const containerRef = useRef<HTMLSpanElement>(null)
   const tlRef       = useRef<any>(null)
   const loadedRef   = useRef(false)
 
-  const bgColour   = variant === 'gold' ? '#C9A84C' : '#0D1F3C'
-  const textColour = variant === 'gold' ? '#0D1F3C' : '#C9A84C'
+  const bgColour   = variant === 'navy' ? '#071e50' : variant === 'gold' ? '#C9A84C' : '#D4DCE8'
+  const textColour = variant === 'navy' ? '#D4DCE8' : '#0a3b82'
 
   useEffect(() => {
     const scripts = [

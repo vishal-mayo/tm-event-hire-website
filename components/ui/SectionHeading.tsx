@@ -1,3 +1,6 @@
+'use client'
+import { motion } from 'framer-motion'
+
 interface SectionHeadingProps {
   eyebrow?: string
   title: string
@@ -8,20 +11,30 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ eyebrow, title, subtitle, centered = true, light = false }: SectionHeadingProps) {
   return (
-    <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className={`mb-14 ${centered ? 'text-center' : ''}`}
+    >
       {eyebrow && (
-        <span className="inline-block text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-          {eyebrow}
-        </span>
+        <div className={`flex items-center gap-3 mb-4 ${centered ? 'justify-center' : ''}`}>
+          <div className="w-8 h-px bg-silver" />
+          <span className={`text-xs font-semibold uppercase tracking-[0.2em] ${light ? 'text-silver/60' : 'text-silver-dark'}`}>
+            {eyebrow}
+          </span>
+          {centered && <div className="w-8 h-px bg-silver" />}
+        </div>
       )}
       <h2 className={`font-display italic text-4xl md:text-5xl leading-tight ${light ? 'text-white' : 'text-navy'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-lg max-w-2xl ${centered ? 'mx-auto' : ''} ${light ? 'text-white/70' : 'text-grey-mid'}`}>
+        <p className={`mt-4 text-lg max-w-2xl leading-relaxed ${centered ? 'mx-auto' : ''} ${light ? 'text-white/55' : 'text-slate/55'}`}>
           {subtitle}
         </p>
       )}
-    </div>
+    </motion.div>
   )
 }

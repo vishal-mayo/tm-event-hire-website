@@ -7,8 +7,9 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans text-navy bg-cream antialiased;
-    color: #3D3530;
+    @apply font-sans antialiased;
+    background: #F0F4F8;
+    color: #2d3f57;
   }
 }
 
@@ -18,11 +19,49 @@
   }
   .nav-link::after {
     content: '';
-    @apply absolute -bottom-1 left-0 w-full h-px bg-gold origin-left scale-x-0 transition-transform duration-300;
+    @apply absolute -bottom-1 left-0 w-full h-px bg-silver origin-left scale-x-0 transition-transform duration-300;
   }
   .nav-link:hover::after,
   .nav-link.active::after {
     @apply scale-x-100;
+  }
+
+  /* Animated underline for section headings */
+  .heading-line {
+    @apply relative inline-block;
+  }
+  .heading-line::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 h-0.5 bg-silver-gradient w-0 transition-all duration-700;
+  }
+
+  /* Card hover lift */
+  .card-lift {
+    @apply transition-all duration-300;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(10,59,130,0.15);
+  }
+
+  /* Frosted glass */
+  .glass-navy {
+    background: rgba(10, 59, 130, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Text gradient */
+  .text-gradient-silver {
+    background: linear-gradient(135deg, #D4DCE8 0%, #A8B8CC 50%, #D4DCE8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-12 h-0.5 bg-silver mb-6;
   }
 }
 
