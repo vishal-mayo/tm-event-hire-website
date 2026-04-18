@@ -28,7 +28,7 @@ export function EventThemes() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Link href={theme.href} className="group relative block overflow-hidden rounded-2xl aspect-[3/4]">
+              <Link href={theme.href} className="group relative block overflow-hidden rounded-2xl aspect-[3/4] transition-transform duration-300 ease-out hover:scale-[1.03] hover:shadow-2xl">
                 <Image
                   src={theme.image}
                   alt={theme.alt}

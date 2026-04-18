@@ -12,7 +12,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, image, href }: ServiceCardProps) {
   return (
-    <Link href={href} className="group relative block overflow-hidden rounded-2xl aspect-[3/4]">
+    <Link href={href} className="group relative block overflow-hidden rounded-2xl aspect-[3/4] transition-transform duration-300 ease-out hover:scale-[1.03] hover:shadow-2xl">
       {/* Full-bleed image */}
       <Image
         src={image}
