@@ -44,46 +44,26 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
 
   function init() {
     if (!wrapperRef.current) return
-    const { TweenLite, TimelineLite, SlowMo, Elastic } = window
-    if (!TweenLite || !TimelineLite || !SlowMo || !Elastic) return
+    const { TweenLite, TimelineLite } = window
+    if (!TweenLite || !TimelineLite) return
 
     const el = wrapperRef.current
     const tl = el.querySelectorAll<HTMLElement>('.card-circle.top-left')
     const br = el.querySelectorAll<HTMLElement>('.card-circle.bottom-right')
 
-    const tlAnim = new TimelineLite()
-    const tl2Anim = new TimelineLite()
     const btTl = new TimelineLite({ paused: true })
 
-    tlAnim.to(tl, 1.2, { x: -30, y: -30, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) })
-    tlAnim.to(tl[0], 0.1, { scale: 0.2, x: '+=6', y: '-=2' })
-    tlAnim.to(tl[1], 0.1, { scaleX: 1, scaleY: 0.8, x: '-=10', y: '-=7' }, '-=0.1')
-    tlAnim.to(tl[2], 0.1, { scale: 0.2, x: '-=15', y: '+=6' }, '-=0.1')
-    tlAnim.to(tl[0], 1, { scale: 0, x: '-=5', y: '-=15', opacity: 0 })
-    tlAnim.to(tl[1], 1, { scaleX: 0.4, scaleY: 0.4, x: '-=10', y: '-=10', opacity: 0 }, '-=1')
-    tlAnim.to(tl[2], 1, { scale: 0, x: '-=15', y: '+=5', opacity: 0 }, '-=1')
+    btTl.set(tl, { x: 0, y: 0, scale: 1 }, 0)
+    btTl.to(tl[0], 0.55, { x: -20, y: -5,  scale: 0, opacity: 0 }, 0)
+    btTl.to(tl[1], 0.55, { x: -14, y: -14, scale: 0, opacity: 0 }, 0)
+    btTl.to(tl[2], 0.55, { x: -5,  y: -20, scale: 0, opacity: 0 }, 0)
 
-    const tlBt1 = new TimelineLite()
-    tlBt1.set(tl, { x: 0, y: 0, rotation: -45 })
-    tlBt1.add(tlAnim)
+    btTl.set(br, { x: 0, y: 0, scale: 1 }, 0.08)
+    btTl.to(br[0], 0.55, { x: 20,  y: 5,   scale: 0, opacity: 0 }, 0.08)
+    btTl.to(br[1], 0.55, { x: 14,  y: 14,  scale: 0, opacity: 0 }, 0.08)
+    btTl.to(br[2], 0.55, { x: 5,   y: 20,  scale: 0, opacity: 0 }, 0.08)
 
-    tl2Anim.set(br, { x: 0, y: 0 })
-    tl2Anim.to(br, 1.1, { x: 30, y: 30, ease: SlowMo.ease.config(0.1, 0.7, false) })
-    tl2Anim.to(br[0], 0.1, { scale: 0.2, x: '-=6', y: '+=3' })
-    tl2Anim.to(br[1], 0.1, { scale: 0.8, x: '+=7', y: '+=3' }, '-=0.1')
-    tl2Anim.to(br[2], 0.1, { scale: 0.2, x: '+=15', y: '-=6' }, '-=0.2')
-    tl2Anim.to(br[0], 1, { scale: 0, x: '+=5', y: '+=15', opacity: 0 })
-    tl2Anim.to(br[1], 1, { scale: 0.4, x: '+=7', y: '+=7', opacity: 0 }, '-=1')
-    tl2Anim.to(br[2], 1, { scale: 0, x: '+=15', y: '-=5', opacity: 0 }, '-=1')
-
-    const tlBt2 = new TimelineLite()
-    tlBt2.set(br, { x: 0, y: 0, rotation: 45 })
-    tlBt2.add(tl2Anim)
-
-    btTl.add(tlBt1)
-    btTl.add(tlBt2, 0.2)
-    btTl.timeScale(2.6)
-
+    btTl.timeScale(1.8)
     tlRef.current = btTl
   }
 
@@ -99,7 +79,7 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
       >
         {[0, 1, 2].map(i => (
           <span key={`tl-${i}`} className="card-circle top-left absolute w-[32px] h-[32px] rounded-full"
-            style={{ background: '#071e50', top: -16, left: -16, opacity: 0 }} />
+            style={{ background: '#D4DCE8', top: -16, left: -16, opacity: 0 }} />
         ))}
       </span>
 
@@ -110,7 +90,7 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
       >
         {[0, 1, 2].map(i => (
           <span key={`br-${i}`} className="card-circle bottom-right absolute w-[32px] h-[32px] rounded-full"
-            style={{ background: '#071e50', top: -16, left: -16, opacity: 0 }} />
+            style={{ background: '#D4DCE8', top: -16, left: -16, opacity: 0 }} />
         ))}
       </span>
 
