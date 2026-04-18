@@ -51,10 +51,13 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
     const tl = el.querySelectorAll<HTMLElement>('.card-circle.top-left')
     const br = el.querySelectorAll<HTMLElement>('.card-circle.bottom-right')
 
+    TweenLite.set([...Array.from(tl), ...Array.from(br)], { opacity: 0, scale: 0 })
+
     const tlAnim = new TimelineLite()
     const tl2Anim = new TimelineLite()
     const btTl = new TimelineLite({ paused: true })
 
+    tlAnim.to(tl, 0, { opacity: 1, scale: 1 })
     tlAnim.to(tl, 1.2, { x: -30, y: -30, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) })
     tlAnim.to(tl[0], 0.1, { scale: 0.2, x: '+=6', y: '-=2' })
     tlAnim.to(tl[1], 0.1, { scaleX: 1, scaleY: 0.8, x: '-=10', y: '-=7' }, '-=0.1')
@@ -68,6 +71,7 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
     tlBt1.add(tlAnim)
 
     tl2Anim.set(br, { x: 0, y: 0 })
+    tl2Anim.to(br, 0, { opacity: 1, scale: 1 })
     tl2Anim.to(br, 1.1, { x: 30, y: 30, ease: SlowMo.ease.config(0.1, 0.7, false) })
     tl2Anim.to(br[0], 0.1, { scale: 0.2, x: '-=6', y: '+=3' })
     tl2Anim.to(br[1], 0.1, { scale: 0.8, x: '+=7', y: '+=3' }, '-=0.1')
@@ -89,25 +93,25 @@ function ThemeCard({ theme }: { theme: typeof themes[0] }) {
 
   return (
     <div ref={wrapperRef} className="relative" onMouseEnter={() => tlRef.current?.restart()}>
-      {/* Goo bubble circles — anchored at top-left corner */}
+      {/* Goo bubble circles — anchored at top-left corner, hidden until hover */}
       <span
         className="absolute pointer-events-none z-20"
         style={{ top: 0, left: 0, filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
       >
         {[0, 1, 2].map(i => (
-          <span key={`tl-${i}`} className="card-circle top-left absolute w-[20px] h-[20px] rounded-full"
-            style={{ background: '#071e50', top: -10, left: -10 }} />
+          <span key={`tl-${i}`} className="card-circle top-left absolute w-[32px] h-[32px] rounded-full"
+            style={{ background: '#071e50', top: -16, left: -16, opacity: 0 }} />
         ))}
       </span>
 
-      {/* Goo bubble circles — anchored at bottom-right corner */}
+      {/* Goo bubble circles — anchored at bottom-right corner, hidden until hover */}
       <span
         className="absolute pointer-events-none z-20"
         style={{ bottom: 0, right: 0, filter: 'url(#goo)', WebkitFilter: 'url(#goo)' }}
       >
         {[0, 1, 2].map(i => (
-          <span key={`br-${i}`} className="card-circle bottom-right absolute w-[20px] h-[20px] rounded-full"
-            style={{ background: '#071e50', top: -10, left: -10 }} />
+          <span key={`br-${i}`} className="card-circle bottom-right absolute w-[32px] h-[32px] rounded-full"
+            style={{ background: '#071e50', top: -16, left: -16, opacity: 0 }} />
         ))}
       </span>
 
