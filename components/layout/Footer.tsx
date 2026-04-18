@@ -62,12 +62,12 @@ export function Footer() {
           {/* Brand col */}
           <div>
             <div className="font-display text-2xl font-bold mb-4 tracking-wide">
-              TM<span className="text-gold">Event</span>Hire
+              TM<span className="text-silver">Event</span>Hire
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Premium event equipment hire across Essex, Hertfordshire and London. Members of the Event Hire Association.
             </p>
-            <div className="inline-block border border-gold/30 text-gold/80 text-[10px] px-3 py-1.5 font-semibold tracking-[0.15em] uppercase">
+            <div className="inline-block border border-silver/30 text-silver/80 text-[10px] px-3 py-1.5 font-semibold tracking-[0.15em] uppercase">
               EHA Member
             </div>
           </div>
@@ -116,24 +116,24 @@ export function Footer() {
             <ul className="space-y-3.5">
               <li>
                 <a href="tel:+447595979451" className="flex items-start gap-2.5 text-white/55 text-sm hover:text-white transition-colors group">
-                  <span className="text-gold/70 group-hover:text-gold transition-colors"><PhoneIcon /></span>
+                  <span className="text-silver/70 group-hover:text-silver transition-colors"><PhoneIcon /></span>
                   +44 7595 979 451
                 </a>
               </li>
               <li>
                 <a href="mailto:info@tmeventhire.co.uk" className="flex items-start gap-2.5 text-white/55 text-sm hover:text-white transition-colors group">
-                  <span className="text-gold/70 group-hover:text-gold transition-colors"><EmailIcon /></span>
+                  <span className="text-silver/70 group-hover:text-silver transition-colors"><EmailIcon /></span>
                   info@tmeventhire.co.uk
                 </a>
               </li>
               <li>
                 <a href="https://wa.me/447595979451" className="flex items-start gap-2.5 text-white/55 text-sm hover:text-white transition-colors group">
-                  <span className="text-gold/70 group-hover:text-gold transition-colors"><WhatsAppIcon /></span>
+                  <span className="text-silver/70 group-hover:text-silver transition-colors"><WhatsAppIcon /></span>
                   WhatsApp Us
                 </a>
               </li>
               <li className="flex items-start gap-2.5 text-white/55 text-sm">
-                <span className="text-gold/70"><LocationIcon /></span>
+                <span className="text-silver/70"><LocationIcon /></span>
                 Essex, Hertfordshire & London
               </li>
             </ul>

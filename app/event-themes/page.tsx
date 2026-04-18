@@ -28,7 +28,7 @@ export default function EventThemesPage() {
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h2 className="font-display italic text-3xl text-white mb-2">{theme.title}</h2>
                 <p className="text-white/70 mb-3 text-sm">{theme.tagline}</p>
-                <span className="text-gold font-semibold text-sm">Learn More →</span>
+                <span className="text-silver font-semibold text-sm">Learn More →</span>
               </div>
             </Link>
           ))}

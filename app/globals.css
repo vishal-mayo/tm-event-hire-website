@@ -8,7 +8,6 @@
   }
   body {
     @apply font-sans text-navy bg-cream antialiased;
-    color: #3D3530;
   }
 }
 
@@ -18,7 +17,7 @@
   }
   .nav-link::after {
     content: '';
-    @apply absolute -bottom-1 left-0 w-full h-px bg-gold origin-left scale-x-0 transition-transform duration-300;
+    @apply absolute -bottom-1 left-0 w-full h-px bg-silver origin-left scale-x-0 transition-transform duration-300;
   }
   .nav-link:hover::after,
   .nav-link.active::after {

@@ -30,9 +30,9 @@ export default function ContactPage() {
                 <div key={label} className="flex items-start gap-4 p-4 bg-stone/40 border border-stone/60">
                   <span className="text-2xl">{icon}</span>
                   <div>
-                    <div className="text-xs font-semibold text-grey-mid uppercase tracking-widest mb-1">{label}</div>
+                    <div className="text-xs font-semibold text-silver-dark uppercase tracking-widest mb-1">{label}</div>
                     {href ? (
-                      <a href={href} className="font-semibold text-navy hover:text-gold transition-colors">{value}</a>
+                      <a href={href} className="font-semibold text-navy hover:text-silver transition-colors">{value}</a>
                     ) : (
                       <span className="font-semibold text-navy">{value}</span>
                     )}

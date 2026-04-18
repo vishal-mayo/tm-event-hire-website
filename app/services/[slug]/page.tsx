@@ -27,7 +27,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       {/* Hero banner */}
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-gold font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Our Services</span>
+          <span className="text-silver font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Our Services</span>
           <h1 className="font-display italic text-5xl md:text-7xl text-white mb-4">{service.title}</h1>
           <p className="text-white/60 text-xl">{service.tagline}</p>
         </div>
@@ -39,7 +39,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
             {/* Text */}
             <div>
-              <div className="w-8 h-px bg-gold mb-8" />
+              <div className="w-8 h-px bg-silver mb-8" />
               <p className="text-navy/70 text-lg leading-relaxed mb-6">{service.description}</p>
               {service.longDescription && (
                 <div className="space-y-4">
@@ -73,7 +73,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                 <ul className="space-y-3">
                   {service.features.map(f => (
                     <li key={f} className="flex items-start gap-3 text-navy/70">
-                      <span className="w-5 h-5 rounded-full bg-gold flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="w-5 h-5 rounded-full bg-silver flex items-center justify-center shrink-0 mt-0.5">
                         <svg viewBox="0 0 20 20" fill="white" className="w-3 h-3">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>

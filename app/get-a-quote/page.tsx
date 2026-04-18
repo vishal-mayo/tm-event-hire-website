@@ -11,7 +11,7 @@ export default function GetAQuotePage() {
     <main className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 bg-cream min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Free Quote Builder</span>
+          <span className="text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Free Quote Builder</span>
           <h1 className="font-display italic text-5xl text-navy mb-4">Build Your Quote</h1>
           <p className="text-navy/60 text-lg max-w-xl mx-auto">
             Tell us about your event and we&apos;ll put together a personalised package. No obligation — just fill in the details and we&apos;ll be in touch.

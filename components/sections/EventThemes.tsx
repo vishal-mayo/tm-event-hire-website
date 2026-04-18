@@ -38,7 +38,7 @@ export function EventThemes() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent group-hover:from-navy/90 transition-all duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="font-display text-2xl font-bold text-white mb-2">{theme.title}</h3>
-                  <span className="text-gold font-semibold text-sm tracking-wide">Learn More →</span>
+                  <span className="text-silver font-semibold text-sm tracking-wide">Learn More →</span>
                 </div>
               </Link>
             </motion.div>

@@ -23,7 +23,7 @@ export function BlogPreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Link href={`/news#${post.slug}`} className="group block overflow-hidden bg-white border border-stone/60 hover:border-gold/40 transition-colors duration-300">
+              <Link href={`/news#${post.slug}`} className="group block overflow-hidden bg-white border border-stone/60 hover:border-silver/40 transition-colors duration-300">
                 <div className="relative overflow-hidden aspect-[16/9]">
                   <Image
                     src={post.image}
@@ -34,11 +34,11 @@ export function BlogPreview() {
                   />
                 </div>
                 <div className="p-5">
-                  <span className="text-gold text-xs font-semibold uppercase tracking-[0.15em]">{post.date}</span>
-                  <h3 className="font-display italic text-xl text-navy mt-2 mb-3 leading-snug group-hover:text-gold transition-colors">
+                  <span className="text-silver text-xs font-semibold uppercase tracking-[0.15em]">{post.date}</span>
+                  <h3 className="font-display italic text-xl text-navy mt-2 mb-3 leading-snug group-hover:text-silver transition-colors">
                     {post.title}
                   </h3>
-                  <span className="text-navy/60 text-sm group-hover:text-gold transition-colors">Continue reading →</span>
+                  <span className="text-navy/60 text-sm group-hover:text-silver transition-colors">Continue reading →</span>
                 </div>
               </Link>
             </motion.div>

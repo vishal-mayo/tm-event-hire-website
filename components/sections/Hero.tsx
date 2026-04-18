@@ -40,7 +40,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl">
-          <p className="text-gold font-semibold text-sm uppercase tracking-[0.25em] mb-4">
+          <p className="text-silver font-semibold text-sm uppercase tracking-[0.25em] mb-4">
             Essex · Hertfordshire · London
           </p>
 
@@ -83,7 +83,7 @@ export function Hero() {
             aria-label={`Go to slide ${i + 1}`}
             className="flex-1 h-0.5 bg-white/25 overflow-hidden"
           >
-            <div className={`h-full bg-gold transition-all duration-300 ${i === current ? 'w-full' : i < current ? 'w-full opacity-60' : 'w-0'}`} />
+            <div className={`h-full bg-silver transition-all duration-300 ${i === current ? 'w-full' : i < current ? 'w-full opacity-60' : 'w-0'}`} />
           </button>
         ))}
       </div>

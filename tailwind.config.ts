@@ -9,11 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy:  { DEFAULT: '#0D1F3C', light: '#1a3560', dark: '#08121f' },
-        gold:  { DEFAULT: '#C9A84C', dark: '#a8882e' },
-        cream: '#FAFAF8',
-        stone: '#E8E0D5',
-        grey:  { light: '#f0ede8', mid: '#9a9a9a' },
+        navy: {
+          DEFAULT: '#0a3b82',
+          light:   '#1a4fa0',
+          dark:    '#071e50',
+        },
+        silver: {
+          DEFAULT: '#A8B8CC',
+          dark:    '#7A90A8',
+          light:   '#D4DCE8',
+        },
+        cream: '#F5F7FA',
+        stone: '#E4EAF2',
+        grey:  { light: '#EEF2F8', mid: '#8A9BB0' },
       },
       fontFamily: {
         sans:    ['var(--font-dm-sans)', 'sans-serif'],

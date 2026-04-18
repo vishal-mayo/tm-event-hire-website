@@ -30,7 +30,7 @@ export default function EventThemePage({ params }: { params: { slug: string } })
         <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/40 to-navy/75" />
         <div className="absolute inset-0 flex items-end px-4 sm:px-8 lg:px-16 pb-16">
           <div className="max-w-7xl mx-auto w-full">
-            <span className="text-gold font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Event Theme</span>
+            <span className="text-silver font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Event Theme</span>
             <h1 className="font-display italic text-6xl md:text-8xl text-white mb-3">{theme.title}</h1>
             <p className="text-white/70 text-xl">{theme.tagline}</p>
           </div>
@@ -43,7 +43,7 @@ export default function EventThemePage({ params }: { params: { slug: string } })
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Main copy */}
             <div className="lg:col-span-2">
-              <div className="w-8 h-px bg-gold mb-8" />
+              <div className="w-8 h-px bg-silver mb-8" />
               <p className="text-navy/70 text-lg leading-relaxed mb-6">{theme.description}</p>
               {theme.longDescription && (
                 <div className="space-y-4">
@@ -65,7 +65,7 @@ export default function EventThemePage({ params }: { params: { slug: string } })
                 <ul className="space-y-3">
                   {theme.highlights.map(h => (
                     <li key={h} className="flex items-start gap-3 text-navy/70 text-sm">
-                      <span className="w-5 h-5 rounded-full bg-gold flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="w-5 h-5 rounded-full bg-silver flex items-center justify-center shrink-0 mt-0.5">
                         <svg viewBox="0 0 20 20" fill="white" className="w-3 h-3">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -83,7 +83,7 @@ export default function EventThemePage({ params }: { params: { slug: string } })
                   <ul className="space-y-2.5">
                     {theme.packages.map(p => (
                       <li key={p} className="text-white/60 text-sm flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-gold shrink-0" />
+                        <span className="w-1 h-1 rounded-full bg-silver shrink-0" />
                         {p}
                       </li>
                     ))}

@@ -23,16 +23,16 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map(service => (
             <Link key={service.slug} href={`/services/${service.slug}`}
-              className="group bg-cream border border-stone/60 hover:border-gold/40 transition-colors overflow-hidden">
+              className="group bg-cream border border-stone/60 hover:border-silver/40 transition-colors overflow-hidden">
               <div className="relative aspect-video overflow-hidden">
                 <Image src={service.images[0]} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
               <div className="p-6 relative">
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-silver origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 <h2 className="font-display italic text-xl text-navy mb-2">{service.title}</h2>
-                <p className="text-gold text-sm font-semibold italic mb-3">{service.tagline}</p>
-                <p className="text-grey-mid text-sm line-clamp-3">{service.description}</p>
-                <span className="inline-block mt-4 text-gold font-semibold text-sm">Learn More →</span>
+                <p className="text-silver text-sm font-semibold italic mb-3">{service.tagline}</p>
+                <p className="text-silver-dark text-sm line-clamp-3">{service.description}</p>
+                <span className="inline-block mt-4 text-silver font-semibold text-sm">Learn More →</span>
               </div>
             </Link>
           ))}

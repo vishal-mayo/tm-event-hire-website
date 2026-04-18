@@ -13,7 +13,7 @@ export default function AboutPage() {
     <main className="pt-20">
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">About Us</span>
+          <span className="text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">About Us</span>
           <h1 className="font-display italic text-5xl md:text-6xl text-white">Who We Are</h1>
         </div>
       </section>
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Our Story</span>
+            <span className="text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Our Story</span>
             <h2 className="font-display italic text-4xl text-navy mb-6">10+ Years of Creating Unforgettable Events</h2>
             <p className="text-navy/70 text-lg leading-relaxed mb-5">
               With over 10 years of experience in the events, catering and wedding industries, TM Event Hire has established itself as one of Essex&apos;s premier event equipment hire companies. We&apos;re proud members of the Event Hire Association.
@@ -38,7 +38,7 @@ export default function AboutPage() {
             <div className="aspect-[4/3] overflow-hidden rounded-sm">
               <Image src="/images/about-team.jpg" alt="TM Event Hire team" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-gold p-6 rounded-sm shadow-xl">
+            <div className="absolute -bottom-6 -left-6 bg-silver p-6 rounded-sm shadow-xl">
               <div className="text-navy font-display text-4xl font-bold">10+</div>
               <div className="text-navy/80 text-xs uppercase tracking-wider font-semibold">Years Experience</div>
             </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
               { n: '5★', l: 'Google Rating' },
             ].map(stat => (
               <div key={stat.l} className="bg-cream p-6 rounded-sm shadow-sm">
-                <div className="font-display text-4xl font-bold text-gold mb-2">{stat.n}</div>
+                <div className="font-display text-4xl font-bold text-silver mb-2">{stat.n}</div>
                 <div className="text-navy/70 text-sm font-semibold uppercase tracking-wide">{stat.l}</div>
               </div>
             ))}

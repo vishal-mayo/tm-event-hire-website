@@ -65,7 +65,7 @@ export function Navbar() {
             />
           </div>
           <span className="font-display text-xl text-white tracking-wide">
-            TM <span className="text-gold">Event</span> Hire
+            TM <span className="text-silver">Event</span> Hire
           </span>
         </Link>
 
@@ -137,7 +137,7 @@ export function Navbar() {
                 transition={{ delay: i * 0.07 }}
               >
                 <Link href={link.href}
-                  className="block py-4 text-2xl font-display italic text-white border-b border-white/10 hover:text-gold transition-colors"
+                  className="block py-4 text-2xl font-display italic text-white border-b border-white/10 hover:text-silver transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -148,7 +148,7 @@ export function Navbar() {
                     transition={{ delay: i * 0.07 + j * 0.04 + 0.1 }}
                   >
                     <Link href={child.href}
-                      className="block py-2 pl-4 text-base text-white/60 hover:text-gold transition-colors"
+                      className="block py-2 pl-4 text-base text-white/60 hover:text-silver transition-colors"
                     >
                       {child.label}
                     </Link>

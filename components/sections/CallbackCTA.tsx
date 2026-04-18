@@ -12,7 +12,7 @@ export function CallbackCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-4">
+          <span className="inline-block text-silver font-semibold text-sm uppercase tracking-[0.2em] mb-4">
             Get In Touch
           </span>
           <h2 className="font-display italic text-4xl md:text-5xl text-white mb-4">
