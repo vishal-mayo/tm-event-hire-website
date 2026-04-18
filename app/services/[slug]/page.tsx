@@ -24,7 +24,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="pt-20">
-      {/* Hero banner */}
+      {/* Hero */}
       <section className="bg-navy py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-silver font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Our Services</span>
@@ -49,14 +49,14 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                 </div>
               )}
               <div className="mt-8">
-                <BubbleButton href="/get-a-quote" variant="gold">Get a Quote</BubbleButton>
+                <BubbleButton href="/get-a-quote" variant="navy">Get a Quote</BubbleButton>
               </div>
             </div>
 
             {/* Images */}
             <div className="space-y-4">
               {service.images.map((img, i) => (
-                <div key={i} className="relative overflow-hidden border border-stone/60">
+                <div key={i} className="relative overflow-hidden rounded-2xl border border-stone/60">
                   <div className="aspect-video relative">
                     <Image src={img} alt={`${service.title} ${i + 1}`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" priority={i === 0} />
                   </div>
@@ -66,7 +66,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Features + Use Cases */}
-          <div className="grid md:grid-cols-2 gap-12 border-t border-stone pt-16">
+          <div className="grid md:grid-cols-2 gap-12 border-t border-stone pt-16 mb-20">
             {service.features && (
               <div>
                 <h2 className="font-display italic text-3xl text-navy mb-6">What&apos;s included</h2>
@@ -90,7 +90,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                 <h2 className="font-display italic text-3xl text-navy mb-6">Perfect for</h2>
                 <div className="flex flex-wrap gap-2">
                   {service.useCases.map(u => (
-                    <span key={u} className="px-4 py-2 border border-stone text-navy/70 text-sm bg-stone/30">
+                    <span key={u} className="px-4 py-2 border border-stone text-navy/70 text-sm bg-stone/30 rounded-full">
                       {u}
                     </span>
                   ))}
@@ -100,6 +100,56 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      {/* How it works */}
+      {service.process && (
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-navy">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="text-silver font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Simple &amp; Stress-Free</span>
+              <h2 className="font-display italic text-4xl md:text-5xl text-white">How It Works</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {service.process.map((p, i) => (
+                <div key={p.step} className="relative">
+                  <div className="w-10 h-10 rounded-full bg-silver/20 flex items-center justify-center mb-4">
+                    <span className="text-silver font-bold text-sm">{i + 1}</span>
+                  </div>
+                  <h3 className="font-sans font-bold text-white text-lg mb-2">{p.step}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{p.description}</p>
+                  {i < service.process!.length - 1 && (
+                    <div className="hidden lg:block absolute top-5 left-full w-full h-px bg-silver/20 -translate-x-1/2" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQs */}
+      {service.faqs && service.faqs.length > 0 && (
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="text-silver font-semibold text-xs uppercase tracking-[0.2em] mb-3 block">Got Questions?</span>
+              <h2 className="font-display italic text-4xl md:text-5xl text-navy">Frequently Asked Questions</h2>
+            </div>
+            <div className="space-y-0 divide-y divide-stone">
+              {service.faqs.map((faq) => (
+                <div key={faq.question} className="py-6">
+                  <h3 className="font-sans font-bold text-navy text-lg mb-3">{faq.question}</h3>
+                  <p className="text-navy/60 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <p className="text-navy/60 mb-6">Still have questions? We&apos;re happy to help.</p>
+              <BubbleButton href="/contact-us" variant="navy">Contact Us</BubbleButton>
+            </div>
+          </div>
+        </section>
+      )}
 
       <CallbackCTA />
     </main>
